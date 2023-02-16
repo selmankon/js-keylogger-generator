@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Keylogger Form</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark">
+	<div class="container mt-3">
+		<div class="row">
+			<div class="col-md-6 offset-md-3 p-3 bg-secondary rounded-sm">
+                    <form id="keylogger-form">
+                        <div class="form-group">
+                            <label for="src" class="text-white">Source URL: </label>
+                            <input type="text" class="form-control" id="src" value="http://localhost:9090/?k=" placeholder="http(s)://domain.com/?k=">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interval" class="text-white">Interval Timeout (in ms):</label>
+                            <input type="number" class="form-control" id="interval" value="1000" placeholder="1000">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="encoding" class="text-white">Encoding and Obfuscation Options:</label>
+                            <select class="custom-select" id="encoding">
+                                <option selected>None</option>
+                                <option value="Obfuscated">Only Obfuscated</option>
+                                <option value="Base64">Base64</option>
+                                <option value="Base64Obfuscated">Base64 & Obfuscated</option>
+                                <option value="Decimal">Decimal</option>
+                                <option value="DecimalObfuscated">Decimal & Obfuscated</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-dark" id="generateBtn">Generate Code</button>
+                        <button type="button" class="btn btn-dark btn-outline float-right copied-animation" id="copyButton" onclick="copyToClipboard()">Copy to Clipboard</button>
+
+                    </form>
+
+
+                    <div class="mt-3 bg-dark rounded-sm">
+                        <textarea id="generatedCode" class="text-white" spellcheck="false"></textarea>
+                    </div>
+			</div>
+		</div>
+	</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/javascript-obfuscator/dist/index.browser.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
